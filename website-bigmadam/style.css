@@ -1,0 +1,267 @@
+:root {
+    --bg-stone: #1ebb7f;
+    --bg-cream: #0bb343;
+    --bg-dark: #06812f;
+    --accent-orange: #D97724;
+    --text-dark: #222222;
+    --text-light: #FFFFFF;
+}
+
+:root {
+    --character-width: 220px;
+    --character-mobile-width: 150px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 1. NAVBAR */
+.navbar {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 5%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.lang-switch {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+
+/* 2. HERO SECTION */
+.hero {
+    position: relative;
+    height: 93vh;
+    background: url('assets/template2.png') center/cover no-repeat;
+    background-color: #555; /* Fallback jika gambar belum ada */
+}
+
+.hotspot {
+    position: absolute;
+    background: rgba(34, 34, 34, 0.85);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.hotspot:hover {
+    transform: scale(1.08);
+    background: var(--accent-orange);
+}
+
+/* 3. PRODUCT SECTION (Split Screen) */
+.product-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+}
+
+.product-left {
+    background-color: var(--bg-stone);
+    padding: 4rem 5%;
+}
+
+.product-right {
+    background-color: var(--bg-cream);
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.handwritten-title {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.category-tabs {
+    display: flex;
+    border: 2px solid var(--text-dark);
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-right: 2px solid var(--text-dark);
+    background: transparent;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+.tab-btn.active {
+    background-color: var(--accent-orange);
+    color: var(--text-dark);
+}
+
+/* 4. COMMUNITY & STORE LOCATOR */
+.community-section, .store-locator {
+    padding: 4rem 5%;
+    background-color: var(--bg-stone);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+}
+
+.card {
+    min-width: 280px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.store-card {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.store-card img {
+    width: 350px;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* 5. FOOTER */
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 3rem 5% 1.5rem;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer ul {
+    list-style: none;
+    margin-top: 0.8rem;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+    line-height: 2;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .product-section, .store-card {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    .nav-links {
+        display: none; /* Bisa dikembangkan menjadi hamburger menu */
+    }
+}
+
+/* KARAKTER INTERAKTIF */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Posisi karakter di belakang bar */
+.character-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--character-width, 280px);
+    z-index: 2;
+    pointer-events: none;
+    transition: left 0.15s ease-out;
+}
+
+.character-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Hotspot di depan karakter */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Bar harus berada di depan karakter */
+.bar-counter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+/* Pengaturan ukuran karakter di HP */
+@media (max-width: 768px) {
+    .character-container {
+        width: var(--character-mobile-width, 180px);
+    }
+}
+
+

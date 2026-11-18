@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai Big Madam</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Gunakan Google Fonts untuk tipografi bergaya santai/handwritten & sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. HEADER & NAVBAR (Sticky di bagian atas) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">☕ Kedai Big Madam</a>
+            <nav class="nav-links">
+                <a href="#tentang">TENTANG</a>
+                <a href="#lokasi">LOKASI</a>
+                <a href="#kabar">SURAT KABAR</a>
+                <a href="#galeri">GALERI</a>
+                <button class="lang-switch">🌐 ID ⌄</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION (Visual kedai interaktif) -->
+    <section class="hero">
+        <!-- KARAKTER INTERAKTIF -->
+        <div class="character-container" id="character-container">
+            <img src="assets/karakter.png" alt="Karakter Kedai Big Madam" id="character">
+        </div>
+        
+        <div class="hero-overlay">
+            <!-- Contoh area klik interaktif di atas gambar latar kedai -->
+            <a href="#menu" class="hotspot" style="top: 25%; left: 15%;">PESAN DI SINI</a>
+            <a href="#lokasi" class="hotspot" style="top: 25%; right: 15%;">AMBIL DI SINI</a>
+        </div>
+    </section>
+
+    <!-- 3. MAIN CONTENT -->
+    <main>
+        <!-- Bagian Lini Produk (Split Layout dengan Tab Interaktif) -->
+        <section id="menu" class="product-section">
+            <div class="product-left">
+                <h2 class="handwritten-title">LINI PRODUK<br>KEDAI Big Madam</h2>
+                <div id="product-display" class="product-showcase">
+                    <!-- Konten produk akan dirender dinamis lewat JavaScript -->
+                </div>
+            </div>
+            <div class="product-right">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="white-milk">WHITE-MILK</button>
+                    <button class="tab-btn" data-category="black">BLACK</button>
+                    <button class="tab-btn" data-category="non-coffee">NON-COFFEE</button>
+                    <button class="tab-btn" data-category="camilan">CAMILAN</button>
+                </div>
+                <div id="product-ingredients" class="ingredients-info">
+                    <!-- Komposisi & deskripsi produk muncul di sini -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Cerita / Komunitas (Horizontal Carousel) -->
+        <section class="community-section">
+            <h2 class="handwritten-title">BERAWAL DARI WARGA, BERAKHIR JADI KELUARGA</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="community-track">
+                    <div class="card"><img src="assets/warga1.jpg" alt="Komunitas 1"><p>Komunitas Sepeda</p></div>
+                    <div class="card"><img src="assets/warga2.jpg" alt="Komunitas 2"><p>Tetangga Sekitar</p></div>
+                    <div class="card"><img src="assets/warga3.jpg" alt="Komunitas 3"><p>Petani Kopi Lokal</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Pencari Lokasi (Store Locator) -->
+        <section id="lokasi" class="store-locator">
+            <h2 class="handwritten-title">CEK LOKASI TERDEKAT</h2>
+            <div class="store-card">
+                <img id="store-img" src="assets/toko1.jpg" alt="Foto Toko">
+                <div class="store-details">
+                    <h3 id="store-name">KEDAI BIG MADAM</h3>
+                    <p id="store-city">TANGERANG</p>
+                    <a id="store-map" href="#" target="_blank" class="btn-direction">Petunjuk arah</a>
+                    <div class="store-controls">
+                        <button id="prev-store">SEBELUMNYA</button>
+                        <button id="next-store">SELANJUTNYA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>INFO KAMI</h4>
+                <ul>
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#menu">Produk</a></li>
+                    <li><a href="#lokasi">Lokasi Toko</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>JAGA IKATAN PERTETANGGAAN!</h4>
+                <p>Layanan Pelanggan: +62 811 0000 0000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 KEDAI BIG MADAM. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
